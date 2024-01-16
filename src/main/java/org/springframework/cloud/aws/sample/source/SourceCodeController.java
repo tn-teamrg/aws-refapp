@@ -19,6 +19,7 @@ package org.springframework.cloud.aws.sample.source;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.Assert;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -37,7 +38,7 @@ public class SourceCodeController {
         this.sourceCodeProvider = sourceCodeProvider;
     }
 
-    @RequestMapping(value = "/source", method = RequestMethod.GET)
+    @GetMapping(value = "/source")
     public SourceFile getSourceFile(@RequestParam String path) {
         Assert.isTrue(StringUtils.hasText(path), "path cannot be empty");
 

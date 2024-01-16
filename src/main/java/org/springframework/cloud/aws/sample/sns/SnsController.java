@@ -39,7 +39,7 @@ public class SnsController {
         this.notificationMessagingTemplate = notificationMessagingTemplate;
     }
 
-    @RequestMapping(value = "/send", method = RequestMethod.POST)
+    @PostMapping(value = "/send")
     @ResponseStatus(HttpStatus.OK)
     public void sendNotification(@RequestBody SnsNotification notification) {
         LOG.debug("Going to send notification {}", notification);

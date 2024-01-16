@@ -53,7 +53,7 @@ public class SqsController {
         this.sqsSendingTextWebSocketHandler = sqsSendingTextWebSocketHandler;
     }
 
-    @RequestMapping(value = "/message-processing-queue", method = RequestMethod.POST)
+    @PostMapping(value = "/message-processing-queue")
     @ResponseStatus(HttpStatus.OK)
     public void sendMessageToMessageProcessingQueue(@RequestBody MessageToProcess message) {
         LOG.debug("Going to send message {} over SQS", message);
