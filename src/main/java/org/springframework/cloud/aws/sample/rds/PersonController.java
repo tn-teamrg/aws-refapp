@@ -36,12 +36,12 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public List<Person> persons() {
         return this.personService.all();
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void add(@RequestBody Person person) {
         this.personService.store(person);
